@@ -8,7 +8,7 @@ public class GerenciadorTarefas {
     private int proximoId = 1;
 
     public Tarefa adicionar(String descricao) {
-        if (descricao == null) {
+        if (descricao == null || descricao.isBlank()) {
             throw new IllegalArgumentException("A descricao nao pode estar vazia.");
         }
         Tarefa tarefa = new Tarefa(proximoId++, descricao.trim());
